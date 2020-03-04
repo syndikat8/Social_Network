@@ -1,0 +1,33 @@
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 10px ;
+    grid-template-areas:
+    "header header"
+    "nav text";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 60px 1fr;
+}
+
+.header {
+    grid-area: header;
+    background: red;
+}
+
+.nav {
+    grid-area: nav;
+    background: red;
+}
+
+.profile {
+    grid-area: text;
+    background: red;
+}
+
+.header__logo {
+    width: 50px;
+    height: 50px;
+}
+
