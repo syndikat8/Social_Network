@@ -21,3 +21,4 @@ git rm -r --cached myFolder# See https://help.github.com/articles/ignoring-files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.idea
