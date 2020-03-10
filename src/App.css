@@ -1,4 +1,4 @@
-.container {
+.app-wrapper {
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
@@ -11,8 +11,10 @@
     grid-template-rows: 60px 1fr;
 }
 
-
-
+.app-wrapper-content {
+    grid-area: text;
+    background: red;
+}
 
 
 
