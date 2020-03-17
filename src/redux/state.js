@@ -11,12 +11,11 @@ let state = {
   },
   dialogsPage: {
     dialogs: [
-      {name: "Dima", id: "1", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
-      {name: "Masha", id: "2", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
-      {name: "Sveta", id: "3", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
-      {name: "Sasha", id: "4", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
-      {name: "Victor", id: "5", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
-      {name: "Valera", id: "6", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> }
+      {name: "Dima", id: "1", img:<img src="https://st2.depositphotos.com/2972641/6125/i/450/depositphotos_61253969-stock-photo-strong-athletic-man-on-black.jpg"/> },
+      {name: "Sveta", id: "3", img:<img src="https://sdelaicomp.ru/wp-content/uploads/2019/06/Photo-Steam11.jpg"/> },
+      {name: "Sasha", id: "4", img:<img src="https://avatars.mds.yandex.net/get-pdb/1926958/e4dcc096-608c-44ae-a173-c097f2eb9124/s375"/> },
+      {name: "Victor", id: "5", img:<img src="https://avatars.mds.yandex.net/get-pdb/1376702/7cc131a1-d0e9-4f1d-a7e0-196f6909802d/s1200"/> },
+      {name: "Valera", id: "6", img:<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM8ASs1BYlICxtKF_rEuETJ3SaJVGtRqTwZR2Fp73F9WuCdla6JQ&s"/> }
     ],
     messages: [
       {message: "Hi", id: "1"},
