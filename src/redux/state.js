@@ -11,12 +11,12 @@ let state = {
   },
   dialogsPage: {
     dialogs: [
-      {name: "Dima", id: "1"},
-      {name: "Masha", id: "2"},
-      {name: "Sveta", id: "3"},
-      {name: "Sasha", id: "4"},
-      {name: "Victor", id: "5"},
-      {name: "Valera", id: "6"}
+      {name: "Dima", id: "1", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
+      {name: "Masha", id: "2", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
+      {name: "Sveta", id: "3", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
+      {name: "Sasha", id: "4", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
+      {name: "Victor", id: "5", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> },
+      {name: "Valera", id: "6", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/> }
     ],
     messages: [
       {message: "Hi", id: "1"},
