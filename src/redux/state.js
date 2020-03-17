@@ -1,3 +1,5 @@
+import React from "react";
+
 let state = {
   profilePage: {
     posts: [
@@ -5,7 +7,6 @@ let state = {
       {id: "2", message: "It's my first post?", likesCount: "11"},
       {id: "3", message: "Lololo", likesCount: "11"},
       {id: "4", message: "HEHEHE", likesCount: "11"}
-
     ]
   },
   dialogsPage: {
@@ -23,6 +24,13 @@ let state = {
       {message: "You", id: "3"},
       {message: "You", id: "4"},
       {message: "You", id: "5"}
+    ]
+  },
+  sitibarPage: {
+    friends: [
+      {name: "Sasha", img:<img src="https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"/>},
+      {name: "Alex", img:<img src="https://schtirlitz.ru/wp-content/uploads/chto-oznachaet-avatarka_20.jpg"/>},
+      {name: "Masha", img:<img src="https://whatsism.com/uploads/posts/2018-07/1530545833_il2zmvzx9py.jpg"/>}
     ]
   }
 };
