@@ -1,11 +1,15 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    grid-template-areas:
+            "dialog messag"
+            "areabutton areabutton";
 }
 
 .dialogs__items {
     padding: 10px;
     text-align: center;
+    grid-area: dialog;
 
 }
 
@@ -15,6 +19,7 @@
 
 .messages {
     padding: 10px;
+    grid-area: messag;
 }
 
 .dialog img {
@@ -23,3 +28,12 @@
     border-radius: 50%;
 }
 
+.areabutton {
+    grid-area: areabutton;
+    display: flex;
+
+}
+
+.areabutton button {
+    margin-left: 10px;
+}
