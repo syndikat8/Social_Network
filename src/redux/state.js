@@ -1,4 +1,6 @@
 import React from "react";
+import {rerenderEntierTree} from "../render";
+
 
 let state = {
   profilePage: {
@@ -43,6 +45,7 @@ export let addPost = (postMessage) => {
     likesCount: 0
   };
   state.profilePage.posts.push(newPost)
+ rerenderEntierTree(state)
 }
 
 export default state;
