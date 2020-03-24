@@ -25,7 +25,7 @@ let addMessag = () => {
       </div>
       <div className={styles.areabutton}>
         <div>
-          <textarea ref={newMessageText}>asdasdasd </textarea>
+          <textarea ref={newMessageText}>ыыыыыыы </textarea>
         </div>
         <div>
           <button onClick={addMessag}>send</button>
