@@ -23,8 +23,9 @@ const App = (props) => {
           addPost={props.addPost}
           updateNewPostText={props.updateNewPostText}/>}/>
         <Route exact path="/dialogs" render={() => <Dialogs
-          state={props.state.dialogsPage}
+          dialogsPage={props.state.dialogsPage}
           addMessag={props.addMessag}
+          updateNewPostMessag={props.updateNewPostMessag}
         />}/>
         <Route path="/music" component={Music}/>
         <Route path="/news" component={News}/>

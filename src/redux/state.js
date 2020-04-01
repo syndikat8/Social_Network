@@ -43,7 +43,8 @@ let state = {
       {message: "You", id: 3},
       {message: "You", id: 4},
       {message: "You", id: 5}
-    ]
+    ],
+    newPostMessag: "qqqqq"
   },
   sitibarPage: {
     friends: [
@@ -65,21 +66,27 @@ export const addPost = () => {
   state.profilePage.newPostText = "";
   rerenderEntierTree(state)
 };
-
-export const addMessag = () => {
-  let newMeassag = {
-    message: "Hi",
-    id: 6
-  };
-  state.dialogsPage.messages.push(newMeassag);
-  rerenderEntierTree(state)
-};
-
-
 export const updateNewPostText = (newText) => {
   state.profilePage.newPostText = newText;
   rerenderEntierTree(state)
 };
+
+export const addMessag = () => {
+  let newMeassag = {
+    message: state.dialogsPage.newPostMessag,
+    id: 6
+  };
+  state.dialogsPage.messages.push(newMeassag);
+  state.dialogsPage.newPostMessag = "";
+  rerenderEntierTree(state)
+};
+export const updateNewPostMessag = (newText) => {
+  state.dialogsPage.newPostMessag = newText;
+  rerenderEntierTree(state)
+};
+
+
+
 
 export const subscribe = (observer) => {
   rerenderEntierTree = observer;
