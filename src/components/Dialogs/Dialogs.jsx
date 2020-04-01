@@ -12,8 +12,9 @@ const Dialogs = (props) => {
 
 let addMessag = () => {
   let text = newMessageText.current.value;
-  alert(text)
-  }
+  newMessageText.current.value = "";
+  props.addMessag(text)
+  };
 
   return (
     <div className={styles.dialogs}>
@@ -25,7 +26,7 @@ let addMessag = () => {
       </div>
       <div className={styles.areabutton}>
         <div>
-          <textarea ref={newMessageText}>ыыыыыыы </textarea>
+          <textarea ref={newMessageText}></textarea>
         </div>
         <div>
           <button onClick={addMessag}>send</button>
