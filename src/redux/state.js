@@ -1,5 +1,5 @@
 let store = {
-  _state:  {
+  _state: {
     profilePage: {
       posts: [
         {id: 1, message: "Hi, how are you?", likesCount: "12"},
@@ -50,45 +50,48 @@ let store = {
       ]
     }
   },
+  _callSubcriber() {
+    console.log("asdasd");
+  },
+
   getState() {
     debugger
     return this._state;
   },
-  _callSubcriber ()  {
-    console.log("asdasd");
-  },
-  addPost  ()  {
-    debugger
-    let newPost = {
-      id: 5,
-      message: this._state.profilePage.newPostText,
-      likesCount: 0
-    };
-    this._state.profilePage.posts.push(newPost);
-    this._state.profilePage.newPostText = "";
-    this._callSubcriber(this._state)
-  },
-  updateNewPostText (newText) {
-    this._state.profilePage.newPostText = newText;
-    this._callSubcriber(this._state)
-  },
-  addMessag  () {
-    let newMeassag = {
-      message: this._state.dialogsPage.newPostMessag,
-      id: 6
-    };
-    this._state.dialogsPage.messages.push(newMeassag);
-    this._state.dialogsPage.newPostMessag = "";
-    this._callSubcriber(this._state)
-  },
-  updateNewPostMessag (newText) {
-    this._state.dialogsPage.newPostMessag = newText;
-    this._callSubcriber(this._state)
-  },
-  subscribe (observer) {
+  subscribe(observer) {
     this._callSubcriber = observer;
+  },
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        id: 5,
+        message: this._state.profilePage.newPostText,
+        likesCount: 0
+      };
+      this._state.profilePage.posts.push(newPost);
+      this._state.profilePage.newPostText = "";
+      this._callSubcriber(this._state)
+    }
+    else if (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._state.profilePage.newPostText = action.newText;
+      this._callSubcriber(this._state)
+    }
+    else if (action.type === "ADD-MESSAGE") {
+      let newMeassag = {
+        message: this._state.dialogsPage.newPostMessag,
+        id: 6
+      };
+      this._state.dialogsPage.messages.push(newMeassag);
+      this._state.dialogsPage.newPostMessag = "";
+      this._callSubcriber(this._state)
+    }
+    else if (action.type === "UPDATE-NEW-POST-MESSAGE") {
+      this._state.dialogsPage.newPostMessag = action.newText;
+      this._callSubcriber(this._state)
+    }
   }
-}
+
+};
 
 
 export default store;

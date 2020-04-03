@@ -13,10 +13,8 @@ let rerenderEntierTree = (state) => {
   ReactDOM.render(
     <BrowserRouter>
       <App state={state}
-           addPost={store.addPost.bind(store)}
-           addMessag={store.addMessag.bind(store)}
-           updateNewPostText={store.updateNewPostText.bind(store)}
-           updateNewPostMessag={store.updateNewPostMessag.bind(store)}></App>
+           dispatch={store.dispatch.bind(store)}
+      ></App>
     </BrowserRouter>
     , document.getElementById('root'));
 };
