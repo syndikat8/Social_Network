@@ -1,5 +1,7 @@
 const ADD_POST = "ADD-POST";
 const UPADATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const ADD_MESSAGE = "ADD-MESSAGE";
+const UPDATE_NEW_POST_MESSAGEA = "UPDATE-NEW-POST-MESSAGE";
 
 let store = {
   _state: {
@@ -78,7 +80,7 @@ let store = {
       this._state.profilePage.newPostText = action.newText;
       this._callSubcriber(this._state)
     }
-    else if (action.type === "ADD-MESSAGE") {
+    else if (action.type === ADD_MESSAGE) {
       let newMeassag = {
         message: this._state.dialogsPage.newPostMessag,
         id: 6
@@ -87,7 +89,7 @@ let store = {
       this._state.dialogsPage.newPostMessag = "";
       this._callSubcriber(this._state)
     }
-    else if (action.type === "UPDATE-NEW-POST-MESSAGE") {
+    else if (action.type === UPDATE_NEW_POST_MESSAGEA) {
       this._state.dialogsPage.newPostMessag = action.newText;
       this._callSubcriber(this._state)
     }
@@ -99,6 +101,12 @@ export const addPostActionCreator = () => ({type: ADD_POST});
 export const updateNewPostTextActionCreator = (text) =>
   ({type: UPADATE_NEW_POST_TEXT, newText: text});
 
+export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
+
+
+export const updateNewPostMessageActionCreator = (text) => ({
+  type: UPDATE_NEW_POST_MESSAGEA, newText: text
+});
 
 
 export default store;
