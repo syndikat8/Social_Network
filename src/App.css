@@ -1,19 +1,13 @@
-.app-wrapper {
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 10px ;
-    grid-template-areas:
-    "header header"
-    "nav text";
-    grid-template-columns: 200px 1fr;
-    grid-template-rows: 60px 1fr;
+.app-wrapper
+{ display: grid;  width: 100%; 
+    max-width: 800px;  margin: 0 auto;  grid-gap: 10px ;  grid-template-areas: 'header header'
+    'nav text';  grid-template-columns: 200px 1fr;  grid-template-rows: 60px 1fr;
 }
 
-.app-wrapper-content {
-    grid-area: text;
-    background: yellow;
+.app-wrapper-content
+{ background: yellow;
+
+    grid-area: text; 
 }
 
 
