@@ -5,17 +5,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
-
-
+import StoreContext from "./StoreContext";
 
 
 let rerenderEntierTree = (state) => {
   ReactDOM.render(
     <BrowserRouter>
-      <App
-        store={store}
-        state={state}
-      ></App>
+      <StoreContext.Provider value={store}>
+      <App/>
+      </StoreContext.Provider>
     </BrowserRouter>
     , document.getElementById('root'));
 };

@@ -15,7 +15,6 @@ const MyPosts = (props) => {
     let text = newPostElement.current.value;
     props.updateNewPostText(text);
   };
-
   return (
     <div className={styles.postsBlock}>
       <h3>My posts</h3>
@@ -28,9 +27,7 @@ const MyPosts = (props) => {
         <button onClick={onAddPost}>Add post</button>
       </div>
       <div className={styles.posts}>
-
         {postsElement}
-
       </div>
     </div>
   )
