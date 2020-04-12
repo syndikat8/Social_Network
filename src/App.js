@@ -12,7 +12,7 @@ import {Route} from "react-router-dom";
 
 
 
-const App = (props) => {
+const App = () => {
 
   return (
     <div className="app-wrapper">
