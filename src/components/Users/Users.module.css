@@ -1,0 +1,20 @@
+.users {
+    display: flex;
+}
+
+.avaButton {
+    padding-right: 20px;
+}
+
+.message {
+    margin: 3px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.userPhoto {
+    width: 70px;
+    height: 70px;
+}
