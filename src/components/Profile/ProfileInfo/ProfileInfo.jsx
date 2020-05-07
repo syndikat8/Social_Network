@@ -43,6 +43,9 @@ const ProfileInfo = (props) => {
             <div>
               Youtube: {props.profile.contacts.youtube}
             </div>
+            <div>
+              Website: {props.profile.contacts.website}
+            </div>
           </div>
           <div>
             <div>
