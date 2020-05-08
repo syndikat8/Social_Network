@@ -20,7 +20,7 @@ const App = () => {
       <Header/>
       <Nav/>
       <div className="app-wrapper-content">
-        <Route path="/profile" render={() => <ProfileContainer/>}/>
+        <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
         <Route exact path="/dialogs" render={() => <DialogsContainer/>}/>
         <Route exact path="/music" render={() => <Music/>}/>
         <Route exact path="/news" render={() => <News/>}/>
