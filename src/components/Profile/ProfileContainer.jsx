@@ -3,6 +3,7 @@ import Profile from "./Profile";
 import {connect} from "react-redux";
 import {getUserProfile} from "../../redux/profile-reducer";
 import {Redirect, withRouter} from "react-router-dom";
+import {witchAuthRedirect} from "../hoc/witchAuthRedirect";
 
 class ProfileContainer extends React.Component {
 
@@ -15,20 +16,20 @@ class ProfileContainer extends React.Component {
   }
 
   render() {
-    if(!this.props.isAuth) return <Redirect to="/login"/>
     return (
       <Profile {...this.props}  />
     )
   }
 }
 
+let RedirectComponent = witchAuthRedirect(ProfileContainer)
+
 let mapStateToProps = (state) => {
   return {
     profile: state.profilePage.profile,
-    isAuth: state.auth.isAuth
   }
 }
 
-let WitchUrlDataContainerComponent = withRouter(ProfileContainer)
+let WitchUrlDataContainerComponent = withRouter(RedirectComponent)
 
 export default connect(mapStateToProps, {getUserProfile})(WitchUrlDataContainerComponent);

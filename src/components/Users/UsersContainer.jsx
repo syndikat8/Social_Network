@@ -9,6 +9,8 @@ import {
 }
   from "../../redux/users-reducer";
 import Preloader from "../common/Preloader/Preloder";
+import {witchAuthRedirect} from "../hoc/witchAuthRedirect";
+
 
 
 class UsersContainer extends React.Component {
@@ -52,8 +54,6 @@ let mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps,
-  {
-    toggleFollowingProgress, follow, unfollow,
-    setCurrentPage, getUsers
-  })(UsersContainer);
+
+export default witchAuthRedirect(connect(mapStateToProps,
+  {toggleFollowingProgress, follow, unfollow, setCurrentPage, getUsers})(UsersContainer));
