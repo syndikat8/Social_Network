@@ -2,8 +2,9 @@ import React from "react";
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {getUserProfile} from "../../redux/profile-reducer";
-import {Redirect, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import {witchAuthRedirect} from "../hoc/witchAuthRedirect";
+import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
 
@@ -22,14 +23,14 @@ class ProfileContainer extends React.Component {
   }
 }
 
-let RedirectComponent = witchAuthRedirect(ProfileContainer)
-
 let mapStateToProps = (state) => {
   return {
     profile: state.profilePage.profile,
   }
 }
 
-let WitchUrlDataContainerComponent = withRouter(RedirectComponent)
-
-export default connect(mapStateToProps, {getUserProfile})(WitchUrlDataContainerComponent);
+export default compose(
+  connect(mapStateToProps, {getUserProfile}),
+  withRouter,
+  witchAuthRedirect
+)(ProfileContainer)

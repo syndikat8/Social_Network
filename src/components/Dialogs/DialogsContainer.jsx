@@ -3,6 +3,7 @@ import {addMessageActionCreator, updateNewPostMessageActionCreator} from "../../
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {witchAuthRedirect} from "../hoc/witchAuthRedirect";
+import {compose} from "redux";
 
 let mapStateToProps = (state) => {
 
@@ -22,7 +23,8 @@ let mapDispatchToProps = (dispatch) => {
   }
 }
 
-let RedirectComponent = witchAuthRedirect(Dialogs)
-const DialogsContainer = connect(mapStateToProps,mapDispatchToProps)(RedirectComponent);
 
-export default DialogsContainer;
+export default compose(
+  connect(mapStateToProps,mapDispatchToProps),
+  witchAuthRedirect
+)(Dialogs)
