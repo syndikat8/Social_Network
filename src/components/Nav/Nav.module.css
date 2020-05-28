@@ -1,22 +1,19 @@
-.nav
-{ padding: 20px; background: blueviolet; 
-
-    grid-area: nav; 
+.nav {
+    padding: 20px;
+    grid-area: nav;
+    background: rgba(0, 0, 0,.7)
 }
 
-.item
-{
+.item {
     margin: 5px 0;
 }
 
-.item a
-{ text-decoration: none;
-
-    color: white; 
+.item a {
+    text-decoration: none;
+    color: white;
 }
 
-.item a.activeLink
-{
+.item a.activeLink {
     color: gold;
 }
 

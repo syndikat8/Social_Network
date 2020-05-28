@@ -6,7 +6,7 @@ const Header = (props) => {
   return (
     <header className={styles.header}>
       <img
-        src="https://image.shutterstock.com/image-vector/shield-letter-s-logosafesecureprotection-logomodern-260nw-633031571.jpg"/>
+        src="https://xage.ru/media/uploads/2009/9/kak-poyavilis-logotipyi-samyih-izvestnyih-rok-grupp/kak-poyavilis-logotipyi-samyih-izvestnyih-rok-grupp_2.jpg"/>
       <div className={styles.loginBlock}>
         { props.isAuth? props.login:<NavLink to="/login">Login</NavLink> }
       </div>

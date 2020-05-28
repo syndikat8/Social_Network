@@ -12,25 +12,25 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPages from "./components/Login/Login";
 
 
-
-
 const App = () => {
 
   return (
-    <div className="app-wrapper">
-      <HeaderContainer/>
-      <Nav/>
-      <div className="app-wrapper-content">
-        <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
-        <Route exact path="/dialogs" render={() => <DialogsContainer/>}/>
-        <Route exact path="/music" render={() => <Music/>}/>
-        <Route exact path="/news" render={() => <News/>}/>
-        <Route exact path="/settings" render={() => <Settings/>}/>
-        <Route exact path="/users" render={() => <UsersContainer/>}/>
-        <Route path="/login" render={() => <LoginPages/>}/>
+
+    <div className="app">
+      <div className="app-wrapper">
+        <HeaderContainer/>
+        <Nav/>
+        <div className="app-wrapper-content">
+          <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
+          <Route exact path="/dialogs" render={() => <DialogsContainer/>}/>
+          <Route exact path="/music" render={() => <Music/>}/>
+          <Route exact path="/news" render={() => <News/>}/>
+          <Route exact path="/settings" render={() => <Settings/>}/>
+          <Route exact path="/users" render={() => <UsersContainer/>}/>
+          <Route path="/login" render={() => <LoginPages/>}/>
+        </div>
       </div>
     </div>
-
   );
 };
 

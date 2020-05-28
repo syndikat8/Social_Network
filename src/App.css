@@ -1,14 +1,25 @@
-.app-wrapper
-{ display: grid;  width: 100%; 
-    max-width: 800px;  margin: 0 auto;  grid-gap: 10px ;  grid-template-areas: 'header header'
-    'nav text';  grid-template-columns: 200px 1fr;  grid-template-rows: 60px 1fr;
+.app {
+    margin: 0 auto;
+    max-width: 1200px;
+    min-height: 100vh;
+    background: url("https://images.wallpaperscraft.ru/image/neon_smajl_art_linii_119268_3840x2400.jpg") no-repeat center/cover;
 }
 
-.app-wrapper-content
-{ background: yellow;
+.app-wrapper {
+    display: grid;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    grid-gap: 10px;
+    grid-template-areas: 'header header' 'nav text';
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 60px 1fr;
 
-    grid-area: text; 
 }
 
+.app-wrapper-content {
+    grid-area: text;
+    background: rgba(0, 0, 0,.4)
+}
 
 

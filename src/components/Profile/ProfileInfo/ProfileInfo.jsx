@@ -8,9 +8,9 @@ const ProfileInfo = (props) => {
   }
   return (
     <div className={styles.profileInfo}>
-      <div>
-        <img src="https://klike.net/uploads/posts/2019-01/1547367999_1.jpg" alt=""/>
-      </div>
+      {/*<div>*/}
+      {/*  <img src="https://klike.net/uploads/posts/2019-01/1547367999_1.jpg" alt=""/>*/}
+      {/*</div>*/}
       <div className={styles.descriptionBlock}>
         <img src={props.profile.photos.large}/>
         <div className={styles.descriptionBlockItem}>
