@@ -1,8 +1,14 @@
 import React from "react";
+import LoginReduxForm from "./LoginForm/LoginForm";
 
 const Login = (props) => {
 
-  return <h1>LOGIN</h1>
+  return (
+    <div>
+      <h1>LOGIN</h1>
+      <LoginReduxForm/>
+    </div>
+  )
 
 }
 
