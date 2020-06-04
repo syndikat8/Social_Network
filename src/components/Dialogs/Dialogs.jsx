@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-
+import MessageFormRedux from "./DialogsForm/DialogsForm";
 
 
 const Dialogs = (props) => {
@@ -10,16 +10,9 @@ const Dialogs = (props) => {
   let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} img={d.img}/>);
   let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message} key={m.id} />);
 
-
-  let onAddMessag = () => {
-    props.addMessag();
-  };
-
-  let onMessagChange = (e) => {
-    let text = e.target.value;
-    props.updateNewPostMessage(text);
-  };
-
+  let onSubmit = (value) => {
+    props.addMessage(value.newMessage)
+  }
 
   return (
     <div className={styles.dialogs}>
@@ -30,13 +23,7 @@ const Dialogs = (props) => {
         {messagesElements}
       </div>
       <div className={styles.areabutton}>
-        <div>
-          <textarea value={props.dialogsPage.newPostMessag}
-                    onChange={onMessagChange}/>
-        </div>
-        <div>
-          <button onClick={onAddMessag}>send</button>
-        </div>
+        <MessageFormRedux onSubmit={onSubmit}/>
       </div>
 
 
