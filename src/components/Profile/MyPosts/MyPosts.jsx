@@ -9,7 +9,6 @@ const MyPosts = (props) => {
   let addNewPost = (value) => {
     props.addPost(value.newPostText)
   }
-
   return (
     <div className={styles.postsBlock}>
       <h3>My posts</h3>
