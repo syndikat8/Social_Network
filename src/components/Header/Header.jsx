@@ -8,7 +8,9 @@ const Header = (props) => {
       <img
         src="https://xage.ru/media/uploads/2009/9/kak-poyavilis-logotipyi-samyih-izvestnyih-rok-grupp/kak-poyavilis-logotipyi-samyih-izvestnyih-rok-grupp_2.jpg"/>
       <div className={styles.loginBlock}>
-        { props.isAuth? props.login:<NavLink to="/login">Login</NavLink> }
+        { props.isAuth
+          ? <div>{props.login} - <button onClick={props.logout} >Log out</button></div>
+          : <NavLink to="/login">Login</NavLink> }
       </div>
     </header>
   )
