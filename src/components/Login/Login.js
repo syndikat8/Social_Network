@@ -20,7 +20,6 @@ const Login = (props) => {
       <LoginReduxForm onSubmit={onSubmit} />
     </div>
   )
-
 }
 
 const mapStateToProps = (state) => ({
