@@ -12,7 +12,6 @@ const MyPosts = (props) => {
   return (
     <div className={styles.postsBlock}>
       <h3>My posts</h3>
-
       <PostsFormRedux onSubmit={addNewPost}/>
       <div className={styles.posts}>
         {postsElement}
