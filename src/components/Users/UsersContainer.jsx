@@ -9,7 +9,6 @@ import {
 }
   from "../../redux/users-reducer";
 import Preloader from "../common/Preloader/Preloder";
-import {witchAuthRedirect} from "../hoc/witchAuthRedirect";
 import {compose} from "redux";
 
 
@@ -55,6 +54,5 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-  witchAuthRedirect,
   connect(mapStateToProps,{toggleFollowingProgress, follow, unfollow, setCurrentPage, getUsers})
 )(UsersContainer)
