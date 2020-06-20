@@ -1,10 +1,13 @@
-import React, {useState} from "react";
-
+import React, {useEffect, useState} from "react";
 
 const ProfileStatus = (props) => {
 
   let [editMode, setEditMode] = useState(true)
   let [status, setStatus] = useState(props.status)
+
+  useEffect( () => {
+    setStatus((props.status))
+  }, [props.status])
 
   const activateEditMode = () => {
     setEditMode(false)
@@ -33,7 +36,6 @@ const ProfileStatus = (props) => {
       }
     </div>
   )
-
 }
 
 export default ProfileStatus;
