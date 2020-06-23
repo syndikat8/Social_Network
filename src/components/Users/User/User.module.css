@@ -1,4 +1,4 @@
-.users {
+.user {
     display: flex;
 }
 
@@ -19,20 +19,3 @@
     height: 70px;
 }
 
-.selectedPage {
-    font-weight: bold;
-}
-
-.pageList {
-    position: relative;
-}
-
-.drop {
-    display: none;
-    position: absolute;
-}
-
-.pageList:hover .drop {
-    display: block;
-    font-weight: normal;
-}

@@ -1,0 +1,18 @@
+.selectedPage {
+    font-weight: bold;
+    color: gold;
+}
+
+.pageList {
+    position: relative;
+}
+
+.drop {
+    display: none;
+    position: absolute;
+}
+
+.pageList:hover .drop {
+    display: block;
+    font-weight: normal;
+}

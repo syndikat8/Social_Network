@@ -3,54 +3,54 @@ import styles from "./ProfileInfo.module.css";
 import Preloader from "../../common/Preloader/Preloder";
 import ProfileStatus from "./ProfileStatus";
 
-const ProfileInfo = (props) => {
-  if (!props.profile) {
+const ProfileInfo = ({profile, status, updateStatus}) => {
+  if (!profile) {
     return <Preloader/>
   }
   return (
     <div className={styles.profileInfo}>
       <div className={styles.descriptionBlock}>
-        <img src={props.profile.photos.large}/>
+        <img src={profile.photos.large}/>
         <div className={styles.descriptionBlockItem}>
-          <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+          <ProfileStatus status={status} updateStatus={updateStatus}/>
           <div>
             <div>
               Обо мне:
             </div>
-            {props.profile.aboutMe}
+            {profile.aboutMe}
           </div>
           <div>
             <div>
               Имя:
             </div>
-            {props.profile.fullName}
+            {profile.fullName}
           </div>
           <div>
             <span>Контакты:</span>
             <div>
-              Facebook: {props.profile.contacts.facebook}
+              Facebook: {profile.contacts.facebook}
             </div>
             <div>
-              Vkontakte: {props.profile.contacts.vk}
+              Vkontakte: {profile.contacts.vk}
             </div>
             <div>
-              Twitter: {props.profile.contacts.twitter}
+              Twitter: {profile.contacts.twitter}
             </div>
             <div>
-              Instagram: {props.profile.contacts.instagram}
+              Instagram: {profile.contacts.instagram}
             </div>
             <div>
-              Youtube: {props.profile.contacts.youtube}
+              Youtube: {profile.contacts.youtube}
             </div>
             <div>
-              Website: {props.profile.contacts.website}
+              Website: {profile.contacts.website}
             </div>
           </div>
           <div>
             <div>
               Работа:
             </div>
-            {props.profile.lookingForAJobDescription}
+            {profile.lookingForAJobDescription}
           </div>
         </div>
       </div>

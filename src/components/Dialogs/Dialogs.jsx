@@ -5,13 +5,13 @@ import Message from "./Message/Message";
 import MessageFormRedux from "./DialogsForm/DialogsForm";
 
 
-const Dialogs = (props) => {
+const Dialogs = ({addMessage, dialogsPage}) => {
 
-  let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} img={d.img}/>);
-  let messagesElements = props.dialogsPage.messages.map(m => <Message message={m.message} key={m.id} />);
+  let dialogsElements = dialogsPage.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} img={d.img}/>);
+  let messagesElements = dialogsPage.messages.map(m => <Message message={m.message} key={m.id} />);
 
   let addNewMessage = (value) => {
-    props.addMessage(value.newMessage)
+    addMessage(value.newMessage)
   }
 
   return (

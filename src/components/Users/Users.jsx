@@ -1,62 +1,25 @@
 import React from "react";
-import styles from './Users.module.css';
-import userPhoto from "../../assets/images/user.jpg"
-import {NavLink} from "react-router-dom";
+import Paginator from "../common/Paginator/Paginator";
+import User from "./User/User";
 
-const Users = (props) => {
-  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+const Users = ({totalUsersCount, pageSize, currentPage, onPageChanged, followingInProgress, unfollow, follow, users}) => {
 
-  let pages = []
-  for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i)
-  }
   return (
-    <div>
-      {props.users.map(u => <div key={u.id}>
-        <div className={styles.users}>
-          <div className={styles.avaButton}>
-            <div>
-              <NavLink to={"/profile/" + u.id}>
-                <img
-                  src={u.photos.small != null ? u.photos.small : userPhoto}
-                  className={styles.userPhoto}/>
-              </NavLink>
-            </div>
-            <div>
-              {u.followed
-                ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                  props.unfollow(u.id)
-                }}>UNFOLLOW</button>
-                : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                  props.follow(u.id)
-                }}>FOLLOW</button>}
-            </div>
-          </div>
-          <div className={styles.message}>
-            <div>
-              <div>{u.name}</div>
-              <div>{u.status}</div>
-            </div>
-            <div>
-              <div>{"u.location.country"}</div>
-              <div>{"u.location.city"}</div>
-            </div>
-          </div>
-        </div>
-      </div>)
-      }
-      <div className={styles.pageList}>
-        <span>Выбрать страницу</span>
-        <div className={styles.drop}>
-          {pages.map(p => {
-            return <span
-              className={props.currentPage === p && styles.selectedPage}
-              onClick={() => {
-                props.onPageChanged(p)
-              }}> {p}</span>
-          })}
-        </div>
-      </div>
+    <div >
+      {users.map(u => <User
+        key={u.id}
+        user={u}
+        followingInProgress={followingInProgress}
+        unfollow={unfollow}
+        follow={follow}
+      />)}
+
+      <Paginator
+        currentPage={currentPage}
+        pageSize={pageSize}
+        onPageChanged={onPageChanged}
+        totalUsersCount={totalUsersCount}
+      />
     </div>
   )
 };

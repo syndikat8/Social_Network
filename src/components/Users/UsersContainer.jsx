@@ -24,27 +24,19 @@ import {
 class UsersContainer extends React.Component {
 
   componentDidMount() {
-    this.props.requestUsers(this.props.currentPage, this.props.pageSize)
+    const {currentPage, pageSize } = this.props
+    this.props.requestUsers(currentPage, pageSize)
   }
 
   onPageChanged = (pageNumber) => {
-    this.props.requestUsers(pageNumber, this.props.pageSize)
+    const {pageSize} = this.props
+    this.props.requestUsers(pageNumber, pageSize)
   }
 
   render() {
     return <>
       {this.props.isFetching ? <Preloader/> : null}
-      <Users
-        onPageChanged={this.onPageChanged}
-        totalUsersCount={this.props.totalUsersCount}
-        currentPage={this.props.currentPage}
-        pageSize={this.props.pageSize}
-        users={this.props.users}
-        follow={this.props.follow}
-        unfollow={this.props.unfollow}
-        toggleFollowingProgress={this.props.toggleFollowingProgress}
-        followingInProgress={this.props.followingInProgress}
-      />
+      <Users {...this.props} onPageChanged={this.onPageChanged}  />
     </>
   };
 }
