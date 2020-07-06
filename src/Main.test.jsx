@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "../Main";
+import Main from "./Main";
 import ReactDOM from "react-dom"
 
 it("renders without crashing", () => {
