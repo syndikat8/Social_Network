@@ -1,18 +1,30 @@
+.paginator {
+    margin: 10px;
+}
+
+.pageNumber {
+    padding: 2px;
+    border: 2px solid blanchedalmond;
+}
+
 .selectedPage {
     font-weight: bold;
     color: gold;
 }
 
-.pageList {
-    position: relative;
+.paginatorItem {
+    padding: 5px;
 }
 
-.drop {
-    display: none;
-    position: absolute;
+.paginatorItem:hover {
+    color: gold;
 }
 
-.pageList:hover .drop {
-    display: block;
-    font-weight: normal;
+.paginatorArrow {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.paginatorArrow:hover {
+    color: gold;
 }

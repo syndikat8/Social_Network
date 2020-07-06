@@ -18,7 +18,7 @@ const Users = ({totalUsersCount, pageSize, currentPage, onPageChanged, following
         currentPage={currentPage}
         pageSize={pageSize}
         onPageChanged={onPageChanged}
-        totalUsersCount={totalUsersCount}
+        totalItemsCount={totalUsersCount}
       />
     </div>
   )
