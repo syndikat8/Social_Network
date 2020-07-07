@@ -3,14 +3,19 @@
     display: flex;
 }
 
-.descriptionBlock img {
-    display: flex;
-    align-self: flex-start;
-}
-
 .descriptionBlockItem {
     margin-left: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.mainPhoto {
+    width: 300px;
+    height: 300px;
+}
+
+.avatar {
+    display: flex;
+    flex-direction: column;
 }
