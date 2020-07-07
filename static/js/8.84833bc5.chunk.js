@@ -1,0 +1,2 @@
+(this.webpackJsonpsoccial=this.webpackJsonpsoccial||[]).push([[8],{295:function(t,n,s){},301:function(t,n,s){"use strict";s.r(n);var c=s(0),e=s.n(c),a=s(295),i=s.n(a);n.default=function(){return e.a.createElement("div",{className:i.a.settings},"Settings")}}}]);
+//# sourceMappingURL=8.84833bc5.chunk.js.map
