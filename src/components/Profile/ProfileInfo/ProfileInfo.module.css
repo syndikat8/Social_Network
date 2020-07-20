@@ -1,21 +1,13 @@
-.descriptionBlock {
-    padding: 10px;
+.profileInfo {
     display: flex;
-}
-
-.descriptionBlockItem {
-    margin-left: 100px;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    width: 100%;
 }
-
 .mainPhoto {
     width: 300px;
     height: 300px;
 }
 
-.avatar {
-    display: flex;
-    flex-direction: column;
+.profileInfoBlock {
+    width: 250px;
 }

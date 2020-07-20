@@ -2,12 +2,9 @@ import React from "react";
 import styles from './Friends.module.css';
 import Friend from "./Friend/Friend";
 
-
 const Friends = (props) => {
 
-
-
-  let friend = props.friends.map(f => <Friend name={f.name} img={f.img}/>);
+  let friend = props.friends.map(f => <Friend key={f.id} name={f.name} img={f.img}/>);
 
   return (
 

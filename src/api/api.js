@@ -9,6 +9,7 @@ const instance = axios.create({
 })
 
 
+
 export const usersAPI = {
   getUsers(currentPage, pageSize) {
     return instance.get(`users?page=${currentPage}&count=${pageSize}`)
@@ -54,6 +55,9 @@ export const profileAPI = {
         "Content-Type": " multipart/form-data"
       }
     )
+  },
+  saveProfile(profile) {
+    return instance.put(`/profile`, profile)
   }
 }
 

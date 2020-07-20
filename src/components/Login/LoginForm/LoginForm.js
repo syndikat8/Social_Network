@@ -5,6 +5,7 @@ import {required} from "../../../utils/validators/validators";
 import styles from "./../../common/FormsControls/FomrControls.module.css"
 
 const LoginForm = ({handleSubmit, error}) => {
+
   return (
     <form onSubmit={handleSubmit}>
       {createField("Email", "email", [required], Input)}
