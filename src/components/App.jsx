@@ -1,5 +1,5 @@
 import React, {Suspense} from "react";
-import {Route, withRouter} from "react-router-dom";
+import {Redirect, Route, Switch, withRouter} from "react-router-dom";
 import "./App.css";
 import {connect} from "react-redux";
 import {compose} from "redux";
@@ -33,15 +33,19 @@ class App extends React.Component {
           <HeaderContainer/>
           <Nav/>
           <div className="app-wrapper-content">
-            <Suspense fallback={<Preloader/>}>
-              <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
-              <Route exact path="/dialogs" render={() => <DialogsContainer/>}/>
-              <Route exact path="/music" render={() => <Music/>}/>
-              <Route exact path="/news" render={() => <News/>}/>
-              <Route exact path="/settings" render={() => <Settings/>}/>
-              <Route exact path="/users" render={() => <UsersContainer/>}/>
-            </Suspense>
-            <Route path="/login" render={() => <Login/>}/>
+            <Switch>
+              <Suspense fallback={<Preloader/>}>
+                <Route exact path="/" render={() => <Redirect to={"/profile"} />}/>
+                <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
+                <Route exact path="/dialogs" render={() => <DialogsContainer/>}/>
+                <Route exact path="/music" render={() => <Music/>}/>
+                <Route exact path="/news" render={() => <News/>}/>
+                <Route exact path="/settings" render={() => <Settings/>}/>
+                <Route exact path="/users" render={() => <UsersContainer/>}/>
+              </Suspense>
+              <Route path="/login" render={() => <Login/>}/>
+              <Route path="*" render={() => <div>404 not found</div>}/>
+            </Switch>
           </div>
         </div>
       </div>
