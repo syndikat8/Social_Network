@@ -9,7 +9,6 @@ const instance = axios.create({
 })
 
 
-
 export const usersAPI = {
   getUsers(currentPage, pageSize) {
     return instance.get(`users?page=${currentPage}&count=${pageSize}`)
@@ -40,7 +39,7 @@ export const profileAPI = {
     return instance.get(`profile/${userId}`)
   },
   updateStatus(newStatus) {
-    return instance.put(`/profile/status`, {
+    return instance.put(`profile/status`, {
         status: newStatus
       }
     )
@@ -51,13 +50,13 @@ export const profileAPI = {
   savePhoto(photoFile) {
     const formData = new FormData()
     formData.append("image", photoFile)
-    return instance.put(`/profile/photo`, formData, {
+    return instance.put(`profile/photo`, formData, {
         "Content-Type": " multipart/form-data"
       }
     )
   },
   saveProfile(profile) {
-    return instance.put(`/profile`, profile)
+    return instance.put(`profile`, profile)
   }
 }
 
@@ -65,17 +64,23 @@ export const authAPI = {
   me() {
     return instance.get(`auth/me`)
   },
-  login(email, password, rememberMe = false) {
-    return instance.post(`/auth/login`, {
+  login(email, password, rememberMe = false, captcha) {
+    return instance.post(`auth/login`, {
       email,
       password,
-      rememberMe
+      rememberMe,
+      captcha
     })
   },
   logout() {
-    return instance.delete(`/auth/login`)
+    return instance.delete(`auth/login`)
   }
 }
 
+export const securityAPI = {
+  getCaptchaUrl(){
+    return instance.get("security/get-captcha-url")
+  }
+}
 
 

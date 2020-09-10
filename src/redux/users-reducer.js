@@ -15,7 +15,17 @@ let initialState = {
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: true,
-  followingInProgress: [2]
+  followingInProgress: [2],
+  drivers: [
+    {
+      driverId: 'abate',
+      url: 'http://en.wikipedia.org/wiki/Carlo_Mario_Abate',
+      givenName: 'Carlo',
+      familyName: 'Abate',
+      dateOfBirth: '1932-07-10',
+      nationality: 'Italian',
+    },
+  ],
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -50,6 +60,7 @@ const usersReducer = (state = initialState, action) => {
           : state.followingInProgress.filter(id => id !== action.userId)
       }
     }
+
     default:
       return state;
   }
@@ -94,4 +105,5 @@ export const follow = (userId) => async (dispatch) => {
 export const unfollow = (userId) => async (dispatch) => {
   followInfollowFlow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), unfollowSuccess)
 }
+
 export default usersReducer;

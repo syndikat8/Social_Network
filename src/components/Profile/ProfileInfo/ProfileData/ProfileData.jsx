@@ -31,5 +31,4 @@ export const ProfileData = ({profile, isOvner, activateEditMode}) => {
       {profile.lookingForAJobDescription}
     </div>
   )
-
 }
